@@ -1,7 +1,6 @@
 package board
 
 import (
-	"fmt"
 	"image/color"
 	"math"
 
@@ -135,12 +134,6 @@ func (b *Board) RemoveLine(line int) {
 	for i := 0; i < width; i++ {
 		b.colors[0][i] = EMPTY_COLOR
 	}
-
-	// b.plates[0] = make([]int, b.GetWidth())
-	// fmt.Printf("zero index row %v", b.plates[0])
-	// fmt.Printf("Removed line %d\n", line)
-	// fmt.Printf("Width: %d\n", b.GetWidth())
-	// fmt.Printf("Height: %d\n", b.GetHeight())
 }
 
 func (b *Board) CheckLines(start, end int) int {
@@ -183,9 +176,6 @@ func makeLighter(c color.Color, factor float64) color.RGBA {
 	newR := math.Min(255, float64(r)*factor)
 	newG := math.Min(255, float64(g)*factor)
 	newB := math.Min(255, float64(b)*factor)
-	fmt.Println("newR ", newR)
-	fmt.Println("newG ", newG)
-	fmt.Println("newB ", newB)
 
 	return color.RGBA{uint8(newR), uint8(newG), uint8(newB), uint8(a >> 8)}
 }

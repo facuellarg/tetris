@@ -164,7 +164,6 @@ func StartGame() *Game {
 
 func CreateRandomPiece(b *board.Board) *piece.Piece {
 	newPieceIndex := rand.Intn(len(piece.PIECES))
-	fmt.Println("argument rand ", b.GetWidth()-piece.PIECES[newPieceIndex].GetWidth()-2)
 	startX := rand.Intn(b.GetWidth()-piece.PIECES[newPieceIndex].GetWidth()-2) + 2
 	return piece.CreatePiece(
 		piece.PIECES[newPieceIndex],
